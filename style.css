@@ -1,0 +1,199 @@
+body
+{
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:yellow  !important;
+}
+.container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+}
+.bubbles
+{
+    position: relative;
+}
+.items
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+.bubbles .line
+{
+    width: 450px;
+    position: absolute;
+    background-color: #9AA6B2;
+    height: 5px;
+    border-radius: 5px;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+}
+
+.down
+{
+    background-color: #9AA6B2;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    animation:backColorreturn .3s ease;
+}
+span{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+    width:30px;
+    height: 30px;
+}
+span i
+{
+    font-size: 20px;
+    color: #9AA6B2;
+}
+i.checked
+{
+    color: #355F2E;
+    
+}
+.down.checked
+{
+    background-color: #355F2E;
+    animation: backColor .3s;
+}
+
+.bubbles .line div
+{
+    height: 5px;
+    width: calc(450px / 3);
+    background-color: transparent;
+}
+.bubbles .line div.checked {
+      animation-name: animated;
+      animation-duration: 2s;
+      background-color: #355F2E;
+} 
+.bubbles .line div.nochecked {
+    animation-name: nonanimated;
+    animation-duration: 1s;
+    background-color: transparent;
+} 
+
+@keyframes animated
+{
+    from{
+       width: 0;
+    }
+    to
+    {
+       width: calc(450px / 3);
+    }
+}
+@keyframes nonanimated
+{
+    from
+    {
+        background-color: #355F2E;
+    }
+    to{
+        background-color:transparent;
+     }
+}
+
+@keyframes backColor
+{
+    from{
+     background-color:#9AA6B2 ;
+    }
+    
+    to
+    {
+       background-color: #355F2E;
+    }
+}
+
+@keyframes backColorreturn
+{
+    from
+    {
+       background-color: #355F2E;
+    }
+    to{
+     background-color:#9AA6B2 ;
+    }
+    
+}
+
+.buttons
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+.buttons div
+{
+    background-color: slateblue;
+    color: #eee;
+    font-size: 20px;
+    padding: 10px 20px ;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.pre:active,
+.next:active
+{
+    transform: scale(.97);
+}
+.pre:hover,
+.next:hover
+{
+   opacity: .75;
+}
+.pre.no,
+.next.no
+{
+   opacity: .75;
+   pointer-events: none;
+}
+
+
+/* div{
+  height: 100px;
+  position: relative;
+  background-color: red;
+}
+div.return
+{
+    animation-name: toorigin;
+    animation-duration: 4s;
+}
+div.str
+{
+    animation-name: stretch;
+    animation-duration: 4s;
+}
+@keyframes toorigin {
+    from   {width: 100%;}
+    to  {width: 0;}
+   
+}
+@keyframes stretch {
+    from   {width: 0;}
+    to  {width: 100%;}
+} */
